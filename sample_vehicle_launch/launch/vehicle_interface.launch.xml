@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
+  
+  <include file="$(find-pkg-share autoware_vehicle_interface_prototype)/launch/actuation.launch.py">
+	<arg name="serial_port" value="/dev/ttyUSB0"/>
+	<arg name="control_mode_cmd" value="['M','M','M','M']"/>
+	<arg name="control_value" value="[0,0,0]"/>
+	<arg name="direction_cmd" value="0.0"/>
+  </include>
+  
 </launch>
