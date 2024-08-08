@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+  <node pkg="autoware_vehicle_interface_prototype" name="serial_oau_node" exec="serial_oau_node"/>
   <node pkg="autoware_vehicle_interface_prototype" name="vehicle_interface_node" exec="vehicle_interface_node"/>
   
 </launch>
