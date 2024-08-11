@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+  <arg name="vehicle_interface_param_file" default="$(find-pkg-share autoware_vehicle_interface_prototype)/config/vehicle_interface.param.yaml"/>
+
   <node pkg="autoware_vehicle_interface_prototype" name="serial_oau_node" exec="serial_oau_node"/>
-  <node pkg="autoware_vehicle_interface_prototype" name="vehicle_interface_node" exec="vehicle_interface_node"/>
-  
+  <node pkg="autoware_vehicle_interface_prototype" name="vehicle_interface_node" exec="vehicle_interface_node">
+    <param from="$(var vehicle_interface_param_file)"/>
+  </node>
+
 </launch>
